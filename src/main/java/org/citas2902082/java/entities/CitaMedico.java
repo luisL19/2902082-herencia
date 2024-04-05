@@ -11,10 +11,11 @@ public class CitaMedico extends Cita implements IAgendable{
         private Estado estado;
 
 
-        public CitaMedico(LocalDateTime fecha, Paciente paciente, String motivo, Medico medico) {
-            super(fecha, paciente);
+        public CitaMedico(LocalDateTime fecha, Paciente paciente, String motivo, Medico medico, Estado estado) {
+            super(id, fecha, paciente, consultorio);
             this.motivo = motivo;
             this.medico = medico;
+            this.estado = estado;
         }
 
 
@@ -38,21 +39,38 @@ public class CitaMedico extends Cita implements IAgendable{
         }
 
 
+        public Estado getEstado() {
+            return estado;
+        }
+
+
+        public void setEstado(Estado estado) {
+            this.estado = estado;
+        }
+
+
         @Override
         public void agendarCita(LocalDateTime fecha) {
-            super.setFecha(fecha);
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'agendarCita'");
         }
 
 
         @Override
         public void cancelarCita() {
-            this.estado = Estado.CANCELADA;
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'cancelarCita'");
         }
 
 
         @Override
         public void reAgendarCita(LocalDateTime fecha) {
-           super.setFecha(fecha);
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'reAgendarCita'");
         }
- 
+
+
+       
+        
+       
 }
